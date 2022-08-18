@@ -1,5 +1,4 @@
 const router = require('express').Router();
-//imports all API routes from /api/index.js
 const apiRoutes = require('./api');
 const htmlRoutes = require('./html/html-routes');
 
