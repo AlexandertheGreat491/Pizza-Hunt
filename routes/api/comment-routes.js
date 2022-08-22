@@ -1,4 +1,5 @@
 const router = require('express').Router();
+//imports the methods from the comment-controller
 const {
   addComment,
   removeComment
