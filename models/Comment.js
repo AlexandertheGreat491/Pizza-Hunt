@@ -1,6 +1,8 @@
+//import statements
 const { Schema, model, Types } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
+//Reply schema
 const ReplySchema = new Schema(
   {
     // set custom id to avoid confusion with parent comment _id
@@ -26,7 +28,7 @@ const ReplySchema = new Schema(
     }
   }
 );
-
+//Comment schema
 const CommentSchema = new Schema(
   {
     writtenBy: {
