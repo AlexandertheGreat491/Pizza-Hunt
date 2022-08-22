@@ -4,11 +4,17 @@ const dateFormat = require('../utils/dateFormat');
 
 const PizzaSchema = new Schema(
   {
+    // data must exist in the pizzaName field
     pizzaName: {
-      type: String
+      type: String,
+      required: true,
+      trim: true
     },
+    // data must exist in the createdBy field
     createdBy: {
-      type: String
+      type: String,
+      required: true,
+      trim: true
     },
     createdAt: {
       type: Date,
