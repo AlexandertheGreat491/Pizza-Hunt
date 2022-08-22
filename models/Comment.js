@@ -1,4 +1,5 @@
-const { Schema, model } = require('mongoose');
+// import code statement
+const { Schema, model, Types } = require('mongoose');
 
 // Reply schema
 const ReplySchema = new Schema(
