@@ -21,8 +21,12 @@ const PizzaSchema = new Schema(
       default: Date.now,
       get: createdAtVal => dateFormat(createdAtVal)
     },
+    // data must exist in the size field
+    // enum stands for  enumerable, referring to a set of data that can be iterated over
     size: {
       type: String,
+      required: true,
+      enum: ['Personal', 'Small', 'Medium', 'Large', 'Extra Large'],
       default: 'Large'
     },
     toppings: [],
