@@ -10,11 +10,15 @@ const ReplySchema = new Schema(
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId()
     },
+    // data must exist in the replyBody field
     replyBody: {
-      type: String
+      type: String,
+      required: true,
     },
+    // data must exist in the writtenBy field
     writtenBy: {
-      type: String
+      type: String,
+      required: true
     },
     createdAt: {
       type: Date,
@@ -31,11 +35,15 @@ const ReplySchema = new Schema(
 //Comment schema
 const CommentSchema = new Schema(
   {
+    // data must exist in the writtenBy field
     writtenBy: {
-      type: String
+      type: String,
+      required: true
     },
+    // data must exist in the commentBody field
     commentBody: {
-      type: String
+      type: String,
+      required: true
     },
     createdAt: {
       type: Date,
