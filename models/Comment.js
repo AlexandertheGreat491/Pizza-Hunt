@@ -11,9 +11,7 @@ const ReplySchema = new Schema(
     replyId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId()
-    }
-  },
-  {
+    },
     replyBody: {
       type: String
     },
@@ -25,6 +23,11 @@ const ReplySchema = new Schema(
       type: Data,
       default: Date.now,
       get: createdAtVal => dateFormat(createdAtVal)
+    }
+  },
+  {
+    toJSON: {
+      getters: true
     }
   }
 );
@@ -45,7 +48,16 @@ const CommentSchema = new Schema({
   },
   // populates an array of data that follows the ReplySchema definition
   replies: [ReplySchema]
-});
+},
+{
+  toJSON: {
+    virtuals: true, 
+    getters: true
+  },
+  
+  id: false
+}
+);
 
 const Comment = model('Comment', CommentSchema);
 
