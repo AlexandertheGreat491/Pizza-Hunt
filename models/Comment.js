@@ -20,7 +20,7 @@ const ReplySchema = new Schema(
     },
     //creates timestamps for comments
     createdAt: {
-      type: Data,
+      type: Date,
       default: Date.now,
       get: createdAtVal => dateFormat(createdAtVal)
     }
